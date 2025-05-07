@@ -28,7 +28,7 @@ COPY --chmod=755 scripts/install_miniforge.sh ${SCRIPTS_DIR}/install_miniforge.s
 RUN ${SCRIPTS_DIR}/install_miniforge.sh
 
 # Installing Python environments.
-COPY --chmod=755 config/default.condarc.yaml ${HOME}/.condarc
+COPY --chmod=755 config/default.condarc.yaml /root/.condarc
 COPY --chmod=755 config/*.yaml ${CONF_DIR}/
 COPY --chmod=755 scripts/install_python_envs.sh ${SCRIPTS_DIR}/install_python_envs.sh
 RUN ${SCRIPTS_DIR}/install_python_envs.sh
@@ -38,6 +38,8 @@ RUN groupadd --gid $USER_GID $USER --force \
     && useradd --uid $USER_UID --gid $USER_GID -m $USER -s /bin/bash \
     && chown -R ${USER}:${USER} ${HOME} \
     && chmod -R 755 ${HOME}
+
+COPY --chmod=755 config/default.condarc.yaml ${HOME}/.condarc
 
 RUN usermod -a -G conda ${USER}
 

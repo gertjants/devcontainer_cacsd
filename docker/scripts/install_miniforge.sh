@@ -9,8 +9,6 @@ chmod +x ./Miniforge3.sh
 bash Miniforge3.sh -b  -p "${MAMBA_ROOT_PREFIX}"
 
 source "${MAMBA_ROOT_PREFIX}/etc/profile.d/conda.sh"
-# For mamba support also run the following command
-source "${MAMBA_ROOT_PREFIX}/etc/profile.d/mamba.sh"
 
 groupadd conda
 chgrp -R conda "${MAMBA_ROOT_PREFIX}"
