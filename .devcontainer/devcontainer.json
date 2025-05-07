@@ -6,6 +6,7 @@
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
     "postCreateCommand": "",
+    "postStartCommand": "/workspace/scripts/import_pycontrol_example.sh",
     "overrideCommand": true,
     "customizations": {
         "vscode": {
