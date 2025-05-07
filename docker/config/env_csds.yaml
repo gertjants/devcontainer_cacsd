@@ -1,5 +1,6 @@
 name: cacsd
 channels:
+  - repa
   - conda-forge
   - main
 dependencies:
@@ -7,5 +8,3 @@ dependencies:
   - slycot
   - control
   - cython
-  - pip: 
-    - repa
