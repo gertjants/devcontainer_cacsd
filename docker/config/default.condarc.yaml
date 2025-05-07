@@ -8,3 +8,10 @@ create_default_packages:
   - ipython
   - ipykernel
   - ipywidgets
+  - matplotlib
+  - matplotlib-inline
+  - numpy
+  - pandas
+  - polars
+  - PyYAML
+  - scipy

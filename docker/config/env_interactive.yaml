@@ -4,6 +4,3 @@ channels:
   - main
 dependencies:
   - python >=3.11
-  - ipython
-  - ipywidgets
-  - PyYAML
