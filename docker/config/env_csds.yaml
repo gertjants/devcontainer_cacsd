@@ -1,0 +1,19 @@
+name: cacsd
+channels:
+  - conda-forge
+  - main
+dependencies:
+  - python==3.12
+  - ipython
+  - ipywidgets
+  - PyYAML
+  - slycot
+  - control
+  - matplotlib
+  - matplotlib-inline
+  - numpy
+  - pandas
+  - polars
+  - scipy
+  - pip: 
+    - repa

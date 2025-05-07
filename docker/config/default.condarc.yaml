@@ -1,0 +1,10 @@
+channels:
+  - pytorch
+  - conda-forge
+  - main
+  - anaconda
+create_default_packages:
+  - pip
+  - ipython
+  - ipykernel
+  - ipywidgets

@@ -1,0 +1,42 @@
+{
+    "name": "Computer Aided Control System Design - Development",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "vscode",
+    "runServices": ["vscode"],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "",
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.eol": "\n",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.defaultInterpreterPath": "/opt/conda/envs/cacsd/bin/python",
+                "redhat.telemetry.enabled": false
+            },
+            "extensions": [
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                "bierner.markdown-mermaid",
+                "tomoki1207.pdf",
+                "zaaack.markdown-editor",
+                "ms-azuretools.vscode-containers",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-slideshow",
+                "redhat.vscode-yaml",
+                "ms-python.python",
+                "donjayamanne.vscode-default-python-kernel",
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}

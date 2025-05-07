@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+  vscode:
+    build: 
+      context: ../docker
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace
+      # SSH directory
+      - ~/.ssh:/home/vscode/.ssh
+      # For Windows without WSL, a copy will be made
+      # from /tmp/.ssh to ~/.ssh to fix permissions
+      # - ~/.ssh:/tmp/.ssh:ro
+      # Git config
+      - ~/.gitconfig:/home/vscode/.gitconfig
+ 
