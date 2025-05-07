@@ -27,12 +27,6 @@ RUN apt-get update \
 COPY --chmod=755 scripts/install_miniforge.sh ${SCRIPTS_DIR}/install_miniforge.sh
 RUN ${SCRIPTS_DIR}/install_miniforge.sh
 
-# Installing Python environments.
-COPY --chmod=755 config/default.condarc.yaml /root/.condarc
-COPY --chmod=755 config/*.yaml ${CONF_DIR}/
-COPY --chmod=755 scripts/install_python_envs.sh ${SCRIPTS_DIR}/install_python_envs.sh
-RUN ${SCRIPTS_DIR}/install_python_envs.sh
-
 # Creating non-root user
 RUN groupadd --gid $USER_GID $USER --force \
     && useradd --uid $USER_UID --gid $USER_GID -m $USER -s /bin/bash \
@@ -46,3 +40,9 @@ RUN usermod -a -G conda ${USER}
 # Swapping to user for final config.
 USER $USER
 WORKDIR ${HOME}
+
+# Installing Python environments.
+COPY --chmod=755 config/default.condarc.yaml /root/.condarc
+COPY --chmod=755 config/*.yaml ${CONF_DIR}/
+COPY --chmod=755 scripts/install_python_envs.sh ${SCRIPTS_DIR}/install_python_envs.sh
+RUN ${SCRIPTS_DIR}/install_python_envs.sh

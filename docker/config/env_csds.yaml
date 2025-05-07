@@ -1,8 +1,6 @@
 name: cacsd
 channels:
   - repa
-  - conda-forge
-  - main
 dependencies:
   - python==3.12
   - slycot
